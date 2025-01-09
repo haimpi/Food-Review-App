@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MidAssignment</string>
+    <string name="confirmation_delete_this_specific_item">האם ברצונך למחוק את הביקורת הספציפית הזאת?</string>
+    <string name="yes">כן</string>
+    <string name="no">לא</string>
+    <string name="review_deleted_successfully">הביקורת נמחקה בהצלחה!</string>
+    <string name="confirmation_delete_all_reviews">האם ברצונך למחוק את כל הביקורות?</string>
+    <string name="all_items_have_been_deleted">כל הביקורות נמחקו בהצלחה!</string>
+    <string name="error_need_rate_rood">שגיאה: עלייך לדרג את האוכל</string>
+    <string name="confirm_delete">אישור מחיקה</string>
+    <string name="error_fill_food_name">שגיאה: עליך למלא את שם האוכל</string>
+    <string name="error_food_name_contain_only_letters">שגיאה: שם האוכל צריך להכיל רק אותיות</string>
+    <string name="food_name_not_enough_chars">שגיאה: שם האוכל צריך להכיל לפחות 3 אותיות</string>
+    <string name="error_fill_restaurant_name">שגיאה: עלייך למלא את שם המסעדה</string>
+    <string name="error_restaurant_name_not_enough_chars">שגיאה: שם המסעדה צריכה להכיל 3 אותיות לפחות</string>
+    <string name="error_need_fill_details_review">שגיאה: עליך למלא את פרטי הביקורת</string>
+    <string name="error_details_not_enough_chars">שגיאה: פרטי הביקורת צריכה להכיל לפחות 10 אותיות</string>
+    <string name="add_food_review">הוספת ביקורת</string>
+    <string name="food_name">שם האוכל</string>
+    <string name="restaurant_name">שם המסעדה</string>
+    <string name="your_detailed_review">פרטים שלך על הביקורת</string>
+    <string name="rate_the_food_1_5_stars">דרג את האוכל (1-5 כוכבים)</string>
+    <string name="upload_a_photo">העלאת תמונה (אופיונצאלי)</string>
+    <string name="submit_review">הוספת הביקורת</string>
+    <string name="taste_rate_discover">תטעם, תדרג, תגלה!</string>
+    <string name="delete_all">מחק הכל</string>
+</resources>

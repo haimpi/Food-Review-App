@@ -20,7 +20,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,21 +28,11 @@
             android:layout_gravity="end"
             android:padding="5dp">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/ftb_editDetails"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="2dp"
-                android:contentDescription="editDetails"
-                android:src="@drawable/baseline_edit_24" />
-
             <TextView
                 android:id="@+id/item_rate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="240dp"
+                android:layout_marginLeft="300dp"
                 android:text="rate"
                 android:textColor="@color/black"
                 android:textSize="15sp" />

@@ -38,9 +38,12 @@ class AllItemsFragment : Fragment(){
         _binding = AllItemsLayoutBinding.inflate(inflater, container, false)
 
         setHasOptionsMenu(true)
+
         binding.fab.setOnClickListener{
+            viewModel.setItem(null)
             findNavController().navigate(R.id.action_allItemsFragment_to_addItemFragment)
         }
+
         return binding.root
     }
 
@@ -56,8 +59,10 @@ class AllItemsFragment : Fragment(){
                 }
 
                 override fun onItemLongClicked(index: Int) {
-
+                    viewModel.setItem(it[index])
+                    findNavController().navigate(R.id.action_allItemsFragment_to_addItemFragment)
                 }
+
             })
             binding.recycler.layoutManager = LinearLayoutManager(requireContext())
         }
@@ -78,16 +83,18 @@ class AllItemsFragment : Fragment(){
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val builder = AlertDialog.Builder(requireContext())
-                builder.setTitle("Delete Confirm")
-                    .setMessage("Are you sure you want to delete this specific item?")
-                    .setPositiveButton("Yes"
+                builder.setTitle(getString(R.string.confirm_delete))
+                    .setMessage(getString(R.string.confirmation_delete_this_specific_item))
+                    .setPositiveButton(
+                        getString(R.string.yes)
                     ) { p0, p1 ->
                         val item = (binding.recycler.adapter as ItemAdapter).itemAt(viewHolder.adapterPosition)
                         viewModel.deleteItem(item)
-                        Toast.makeText(requireContext(),"This item has been deleted successfully.",
+                        Toast.makeText(requireContext(),
+                            getString(R.string.review_deleted_successfully),
                             Toast.LENGTH_SHORT).show()
                     }
-                    .setNegativeButton("No"){ _,_ ->
+                    .setNegativeButton(getString(R.string.no)){ _, _ ->
                         (binding.recycler.adapter as ItemAdapter).notifyItemChanged(viewHolder.adapterPosition)
                     }
                     .setOnCancelListener {
@@ -106,11 +113,14 @@ class AllItemsFragment : Fragment(){
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.action_delete){
             val builder = AlertDialog.Builder(requireContext())
-            builder.setTitle("Confirm Delete")
-                .setMessage("Are you sure you want to delete all items?")
-                .setPositiveButton("Yes") { p0, p1 ->
+            builder.setTitle(getString(R.string.confirm_delete))
+                .setMessage(getString(R.string.confirmation_delete_all_reviews))
+                .setPositiveButton(
+                    getString(R.string.yes)
+                ) { p0, p1 ->
                     viewModel.deleteAll()
-                    Toast.makeText(requireContext(), "Deleted All", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(),
+                        getString(R.string.all_items_have_been_deleted), Toast.LENGTH_SHORT).show()
                 }.show()
         }
         return super.onOptionsItemSelected(item)

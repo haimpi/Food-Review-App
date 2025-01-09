@@ -40,9 +40,5 @@
         android:id="@+id/detailItemFragment"
         android:name="com.example.midassignment.ui.single_character.DetailItemFragment"
         android:label="detail_item_layout"
-        tools:layout="@layout/detail_item_layout" >
-        <action
-            android:id="@+id/action_detailItemFragment_to_addItemFragment"
-            app:destination="@id/addItemFragment" />
-    </fragment>
+        tools:layout="@layout/detail_item_layout" />
 </navigation>

@@ -42,15 +42,11 @@ class DetailItemFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.chosenItem.observe(viewLifecycleOwner){
-            binding.itemRestaurantName.text = it.restaurantName
-            binding.itemFoodName.text = it.foodName
-            binding.itemDescription.text = it.description
-            binding.itemRate.text = it.ratingRate.toString()
-            Glide.with(requireContext()).load(it.photo).into(binding.itemImage)
-        }
-
-        binding.ftbEditDetails.setOnClickListener{
-            findNavController().navigate(R.id.action_detailItemFragment_to_addItemFragment)
+            binding.itemRestaurantName.text = it?.restaurantName
+            binding.itemFoodName.text = it?.foodName
+            binding.itemDescription.text = it?.description
+            binding.itemRate.text = it?.ratingRate.toString()
+            Glide.with(requireContext()).load(it?.photo).into(binding.itemImage)
         }
     }
 

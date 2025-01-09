@@ -12,13 +12,13 @@ import com.example.midassignment.data.model.Item
 interface ItemDao {
 
     @Insert()
-    fun addItem(item: Item)
+    suspend fun addItem(item: Item)
 
     @Delete
-    fun deleteItem(vararg items: Item)
+    suspend fun deleteItem(vararg items: Item)
 
     @Update
-    fun updateItem(item: Item)
+    suspend fun updateItem(item: Item)
 
     @Query("SELECT * FROM items ORDER BY content_foodName ASC")
     fun getItems() : LiveData<List<Item>>
@@ -27,5 +27,5 @@ interface ItemDao {
     fun getItem(id: Int) : Item
 
     @Query("DELETE FROM items")
-    fun deleteAll()
+    suspend fun deleteAll()
 }
